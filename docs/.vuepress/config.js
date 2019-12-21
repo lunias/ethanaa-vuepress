@@ -4,10 +4,16 @@ module.exports = {
   themeConfig: {
     lastUpdated: 'Last Updated',
     logo: '/eanderson.jpg',
+    displayAllHeaders: true,
     nav: [
       { text: 'About', link: '/#about-me' },
-      { text: 'Resume', link: '/#resume' },
+      { text: 'Résumé', link: '/#resume' },
       { text: 'Contact', link: '/#contact' },
+      { text: 'Blog', link: '/blog/' }
+    ],
+    sidebar: [
+      ['/blog/', 'Blog'],
+      ['/', 'Résumé']
     ],
     smoothScroll: true
   }
