@@ -29,6 +29,9 @@ module.exports = {
         'ga': 'UA-137350132-2' // UA-00000000-0
       }
     ],
+    ['vuepress-plugin-code-copy', {
+      'color': '#E37372'
+    }],
     ['@vuepress/back-to-top'],
     ['@vuepress/medium-zoom'],
     ['seo',
