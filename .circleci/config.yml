@@ -57,6 +57,9 @@ jobs:
       - run:
           name: 'Run build'
           command: yarn docs:build
+      - run:
+          name: 'Copy resume pdf into dist'
+          command: cp Ethan_Anderson_Resume.pdf docs/.vuepress/dist/
       - persist_to_workspace:
           root: ~/project
           paths:
@@ -69,22 +72,24 @@ jobs:
   deploy:
     <<: *defaults
     steps:
-      - checkout
       - attach_workspace:
           at: ~/project
       - run:
           name: 'Deploy to S3'
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              ~/project/s3deploy -source=~/project/docs/.vuepress/dist -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v
+              cd ~/project/docs/.vuepress/dist
+              ~/project/s3deploy -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v
             else
-              echo "Not master branch, dry run only"
+              echo "Not master branch, dry run only\n"
               echo "Working directory files:"
               pwd
+              echo
               ls -lAF
               cd ~/project/docs/.vuepress/dist
               echo "Built files:"
               pwd
+              echo
               ls -lAF
               ~/project/s3deploy -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v -try
             fi
