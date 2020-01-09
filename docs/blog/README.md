@@ -16,6 +16,10 @@ footer: MIT Licensed | Copyright © 2019-present Ethan Anderson
 pageClass: custom-page-class
 ---
 
+# 1/9/2020
+
+## Continuous Deployment with CircleCI and s3deploy
+
 # 1/8/2020
 
 ## Conversion to a Static Site with VuePress and AWS S3
