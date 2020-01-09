@@ -84,8 +84,9 @@ jobs:
               ls -lAF
               cd ~/project/docs/.vuepress/dist
               echo "Built files:"
+              pwd
               ls -lAF
-              ~/project/s3deploy -source=~/project/docs/.vuepress/dist -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v -try
+              ~/project/s3deploy -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v -try
             fi
 
 #------------------------------------------------------------
