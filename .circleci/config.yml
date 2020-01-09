@@ -81,7 +81,8 @@ jobs:
               cd ~/project/docs/.vuepress/dist
               ~/project/s3deploy -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v
             else
-              echo "Not master branch, dry run only\n"
+              echo "Non-master branch: dry run only"
+              echo
               echo "Working directory files:"
               pwd
               echo
@@ -91,6 +92,7 @@ jobs:
               pwd
               echo
               ls -lAF
+              echo
               ~/project/s3deploy -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v -try
             fi
 
