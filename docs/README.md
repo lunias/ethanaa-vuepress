@@ -26,6 +26,8 @@ In my personal life I love writing code, watching movies, rock climbing, playing
 
 # Résumé
 
+<a id="pdf" href="http://www.ethanaa.com/Ethan_Anderson_Resume.pdf">Download as PDF</a>
+
 ## Executive Summary
 
 Highly skilled full-stack software professional with over 10 years experience who has a broad range of software development and information technology skills. Equally comfortable serving a role working on back-end (Java, Spring, Hibernate / JPA), integration (REST, SOAP, Kafka, RabbitMQ), or front-end (JavaScript, Vue.js, Node.js, HTML5). Also knowledgeable about creating domain models and designing database schemas using a variety of databases including MS SQL, Oracle, H2, MongoDB, and Elasticsearch. Well-versed in UNIX and used to working with a CLI.
@@ -68,7 +70,7 @@ Java, JavaScript, Python, Bash, SQL, HTML, CSS
 
 ### Frameworks and Libraries
 
-Spring Boot, Hibernate / JPA, JavaFX, JUnit, Spock, Vue.js, Angular.js, Node.js
+Spring Boot, Hibernate / JPA, JavaFX, JUnit, Spock, Vue.js, Angular.js, Apache Camel
 
 ### Databases
 
@@ -76,7 +78,7 @@ PostgreSQL, H2, SQL Server, Oracle, Elasticsearch, MongoDB
 
 ### Tools
 
-IntelliJ IDEA, Emacs, Maven, Gradle, Git, Tomcat, Jenkins, Camel, ActiveMQ, RabbitMQ, Kafka, AWS, Convox, CircleCI, Prometheus, Grafana, Unix-like OS
+IntelliJ IDEA, Emacs, Maven, Gradle, Git, Tomcat, Jenkins, Node.js, ActiveMQ, RabbitMQ, Kafka, AWS, Convox, CircleCI, Prometheus, Grafana, Unix-like OS
 
 ### Methodologies
 

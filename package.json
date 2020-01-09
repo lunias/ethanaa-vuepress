@@ -4,6 +4,11 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
-    "vuepress": "^1.2.0"
+    "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-google-analytics": "^1.2.0",
+    "@vuepress/plugin-medium-zoom": "^1.2.0",
+    "markdown-it-imsize": "^2.0.1",
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-seo": "^0.1.2"
   }
 }

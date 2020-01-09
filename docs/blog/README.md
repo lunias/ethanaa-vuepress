@@ -16,78 +16,183 @@ footer: MIT Licensed | Copyright © 2019-present Ethan Anderson
 pageClass: custom-page-class
 ---
 
-# 12/21/2020
+# 1/8/2020
 
-## Time Travel Possible?
+## Conversion to a Static Site with VuePress and AWS S3
 
-Hello World.
+I've been working a lot lately with AWS and I figured it was high time that I
+leveraged some of that newfound kowledge to improve my own website. I set out
+with 3 goals in mind:
 
-# 12/21/2019
+1. Reduce my monthly AWS bill
+2. Improve performance
+3. Create a better experience for both the user as well as the developer (me :smile:)
 
-## Hello World Again
+First is to address my current cost of operating a site which is quite simple in
+scope. As of last November, I'm clearly paying too much considering other
+hosting options for a personal résumé and blog.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam donec adipiscing tristique risus. Odio tempor orci dapibus ultrices. Egestas quis ipsum suspendisse ultrices gravida dictum. Faucibus turpis in eu mi bibendum neque. Velit scelerisque in dictum non consectetur a erat. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Varius vel pharetra vel turpis nunc eget lorem. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Odio pellentesque diam volutpat commodo. Ultricies integer quis auctor elit sed vulputate. At erat pellentesque adipiscing commodo elit at imperdiet. Tempus iaculis urna id volutpat lacus laoreet non. Maecenas pharetra convallis posuere morbi. Ac felis donec et odio pellentesque diam volutpat commodo sed. Ac tortor dignissim convallis aenean et tortor at risus. Et malesuada fames ac turpis.
+![Cost Reports November](./img/cost_reports_november.png)
 
-Id ornare arcu odio ut. Tellus orci ac auctor augue mauris. Aliquet risus feugiat in ante metus dictum. Diam maecenas sed enim ut. Ac turpis egestas sed tempus urna et pharetra pharetra massa. Feugiat pretium nibh ipsum consequat nisl. Amet purus gravida quis blandit turpis. In fermentum et sollicitudin ac orci. Ipsum consequat nisl vel pretium. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus.
+I had originally chosen to implement
+[ethanaa.com](https://github.com/lunias/ethanaa) as a [Spring
+Boot](https://spring.io/projects/spring-boot) /
+[Angular.js](https://angular.io/) application and serve it using [AWS Elastic
+Beanstalk](https://aws.amazon.com/elasticbeanstalk/). This suited my needs
+because I had initially planned on adding more interesting server side code
+(users, authentication, apis, etc.) to the app, but alas I never did. So it's
+time to bring the site into better alignment with its newly solidified purpose:
+**an easy to maintain and performance optimized personal web profile**.
 
-Malesuada fames ac turpis egestas integer eget aliquet nibh praesent. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Scelerisque varius morbi enim nunc faucibus a pellentesque. At varius vel pharetra vel turpis. Praesent semper feugiat nibh sed pulvinar proin gravida. Cras pulvinar mattis nunc sed blandit libero volutpat sed cras. Adipiscing diam donec adipiscing tristique. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Lacinia at quis risus sed vulputate. Sit amet porttitor eget dolor morbi. Suscipit tellus mauris a diam maecenas sed enim ut. Cursus turpis massa tincidunt dui. Rutrum quisque non tellus orci ac auctor augue mauris. Pulvinar sapien et ligula ullamcorper malesuada. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui. Scelerisque purus semper eget duis at tellus. Amet commodo nulla facilisi nullam vehicula.
+With the cost benefits in mind, I decided to try my hand at a static site
+conversion so that I could serve the whole website out of an S3 bucket.
 
-Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Vitae nunc sed velit dignissim sodales ut eu sem. Mauris nunc congue nisi vitae. Arcu felis bibendum ut tristique. Fusce id velit ut tortor. Mauris rhoncus aenean vel elit. Morbi blandit cursus risus at ultrices mi. A diam maecenas sed enim ut sem viverra aliquet eget. Malesuada proin libero nunc consequat. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Ullamcorper sit amet risus nullam eget felis.
+[According to
+Amazon](https://aws.amazon.com/getting-started/projects/host-static-website/)
+the total cost of hosting your site in this fashion will be $1-3/month. Looking
+at the S3 pricing seems to confirm that assertion for my case.
 
-Ullamcorper malesuada proin libero nunc consequat. Sagittis vitae et leo duis ut diam quam nulla porttitor. Ut aliquam purus sit amet luctus venenatis. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Neque sodales ut etiam sit amet. Vulputate dignissim suspendisse in est ante in nibh mauris cursus. Hac habitasse platea dictumst quisque sagittis. Nunc congue nisi vitae suscipit tellus mauris a. Lobortis scelerisque fermentum dui faucibus in. Morbi tristique senectus et netus. Cursus euismod quis viverra nibh cras. Erat velit scelerisque in dictum. Nam libero justo laoreet sit amet.
+- GET Requests cost $0.004 per 10,000 requests
+- Data Transfer Out costs $0.090 per GB (up to 10 TB / month)
 
-## Hello World Again
+Sounds good to me :ok_hand:. Let's get started!
 
-Back at it again.
+### VuePress
 
-## Hello World Again
+![VuePress](./img/vuepress.png =170x170)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper. Iaculis urna id volutpat lacus laoreet. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Aenean sed adipiscing diam donec adipiscing tristique. Donec ac odio tempor orci dapibus ultrices in iaculis. Felis eget velit aliquet sagittis id consectetur purus ut. Integer vitae justo eget magna. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Vitae nunc sed velit dignissim sodales ut eu sem. Donec adipiscing tristique risus nec feugiat in fermentum. Amet aliquam id diam maecenas ultricies mi. Id ornare arcu odio ut sem nulla pharetra.
+Of all the modern JavaScript frameworks available, I am most experienced with
+[Vue.js](https://vuejs.org/). I looked at some options and ultimately chose
+[VuePress](https://vuepress.vuejs.org/) as my static site generator.
 
-Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Fames ac turpis egestas maecenas pharetra convallis posuere. Eros in cursus turpis massa. Magnis dis parturient montes nascetur ridiculus. Amet massa vitae tortor condimentum lacinia quis vel eros donec. Dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Rhoncus urna neque viverra justo nec ultrices dui sapien. Pretium vulputate sapien nec sagittis aliquam malesuada. Ac tortor dignissim convallis aenean et tortor. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Non arcu risus quis varius quam quisque id diam vel. Feugiat nisl pretium fusce id velit ut tortor. Nec dui nunc mattis enim ut.
+VuePress allows me to theme the site using the familiar Vue.js and generate
+pre-rendered static HTML which is performant and SEO friendly. It also provides
+a number of excellent plugins, which means less code for me to write in order to
+deliver the experience that I'm after.
 
-At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Magna fermentum iaculis eu non diam. Felis eget velit aliquet sagittis id consectetur. Gravida quis blandit turpis cursus in. Justo donec enim diam vulputate ut pharetra sit. Suscipit tellus mauris a diam maecenas sed enim ut. Vulputate enim nulla aliquet porttitor. Eu nisl nunc mi ipsum. Mollis nunc sed id semper risus in hendrerit gravida. Vel orci porta non pulvinar neque. Mattis rhoncus urna neque viverra justo nec ultrices. Pulvinar mattis nunc sed blandit. Eu nisl nunc mi ipsum faucibus vitae. Nisl suscipit adipiscing bibendum est. Condimentum vitae sapien pellentesque habitant morbi tristique senectus.
+Including...
 
-At in tellus integer feugiat scelerisque. A arcu cursus vitae congue mauris rhoncus. Vitae proin sagittis nisl rhoncus. Adipiscing commodo elit at imperdiet dui accumsan. Sit amet purus gravida quis blandit turpis cursus in. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Est ultricies integer quis auctor. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Id aliquet risus feugiat in ante metus. Molestie a iaculis at erat pellentesque. Consectetur adipiscing elit duis tristique sollicitudin nibh. Eget arcu dictum varius duis at consectetur. Tellus in metus vulputate eu scelerisque felis imperdiet. Eget mi proin sed libero. Mi eget mauris pharetra et ultrices neque ornare aenean. Magna ac placerat vestibulum lectus mauris. Arcu non odio euismod lacinia at quis risus. At elementum eu facilisis sed odio morbi.
+- [Back-to-top plugin](https://v1.vuepress.vuejs.org/plugin/official/plugin-back-to-top.html)
+- [medium-zoom plugin](https://v1.vuepress.vuejs.org/plugin/official/plugin-medium-zoom.html)
+- [Vuepress Plugin SEO](https://github.com/lorisleiva/vuepress-plugin-seo)
+- [Google analytics plugin](https://v1.vuepress.vuejs.org/plugin/official/plugin-google-analytics.html)
 
-Nulla posuere sollicitudin aliquam ultrices sagittis. Est pellentesque elit ullamcorper dignissim cras. Quis enim lobortis scelerisque fermentum dui faucibus in. Nibh sed pulvinar proin gravida hendrerit lectus. Urna et pharetra pharetra massa massa. Sed blandit libero volutpat sed cras ornare. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. In est ante in nibh mauris. Ridiculus mus mauris vitae ultricies leo. Duis convallis convallis tellus id interdum. Euismod lacinia at quis risus sed vulputate odio. Pretium vulputate sapien nec sagittis aliquam. Tristique magna sit amet purus. Viverra mauris in aliquam sem fringilla ut. Sit amet purus gravida quis. Egestas dui id ornare arcu. Suscipit tellus mauris a diam.
+Editing content on the site is greatly simplified by a build step which compiles
+Markdown files (which allow embedded Vue usage) into HTML.
 
-## Hello World Again
+Building is as simple as `yarn docs:build`
 
-Back at it again.
+### Amazon S3
 
-## Hello World Again
+![S3](./img/aws-s3.svg =170x120)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper. Iaculis urna id volutpat lacus laoreet. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Aenean sed adipiscing diam donec adipiscing tristique. Donec ac odio tempor orci dapibus ultrices in iaculis. Felis eget velit aliquet sagittis id consectetur purus ut. Integer vitae justo eget magna. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Vitae nunc sed velit dignissim sodales ut eu sem. Donec adipiscing tristique risus nec feugiat in fermentum. Amet aliquam id diam maecenas ultricies mi. Id ornare arcu odio ut sem nulla pharetra.
+The first step to using S3 is to create a bucket. I named it after my domain
+name (with the www subdomain) specifically to make DNS resolution work properly
+with GoDaddy, but since migrating to using CloudFront and Route53 I no longer
+believe this to be a requirement.
 
-Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Fames ac turpis egestas maecenas pharetra convallis posuere. Eros in cursus turpis massa. Magnis dis parturient montes nascetur ridiculus. Amet massa vitae tortor condimentum lacinia quis vel eros donec. Dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Rhoncus urna neque viverra justo nec ultrices dui sapien. Pretium vulputate sapien nec sagittis aliquam malesuada. Ac tortor dignissim convallis aenean et tortor. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Non arcu risus quis varius quam quisque id diam vel. Feugiat nisl pretium fusce id velit ut tortor. Nec dui nunc mattis enim ut.
+![S3 Bucket](./img/bucket.png)
 
-At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Magna fermentum iaculis eu non diam. Felis eget velit aliquet sagittis id consectetur. Gravida quis blandit turpis cursus in. Justo donec enim diam vulputate ut pharetra sit. Suscipit tellus mauris a diam maecenas sed enim ut. Vulputate enim nulla aliquet porttitor. Eu nisl nunc mi ipsum. Mollis nunc sed id semper risus in hendrerit gravida. Vel orci porta non pulvinar neque. Mattis rhoncus urna neque viverra justo nec ultrices. Pulvinar mattis nunc sed blandit. Eu nisl nunc mi ipsum faucibus vitae. Nisl suscipit adipiscing bibendum est. Condimentum vitae sapien pellentesque habitant morbi tristique senectus.
+The root of the bucket will contain the files output by `yarn docs:build`. They
+can be found in the `docs/.vuepress/dist` directory.
 
-At in tellus integer feugiat scelerisque. A arcu cursus vitae congue mauris rhoncus. Vitae proin sagittis nisl rhoncus. Adipiscing commodo elit at imperdiet dui accumsan. Sit amet purus gravida quis blandit turpis cursus in. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Est ultricies integer quis auctor. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Id aliquet risus feugiat in ante metus. Molestie a iaculis at erat pellentesque. Consectetur adipiscing elit duis tristique sollicitudin nibh. Eget arcu dictum varius duis at consectetur. Tellus in metus vulputate eu scelerisque felis imperdiet. Eget mi proin sed libero. Mi eget mauris pharetra et ultrices neque ornare aenean. Magna ac placerat vestibulum lectus mauris. Arcu non odio euismod lacinia at quis risus. At elementum eu facilisis sed odio morbi.
+Next is to enable static website hosting. The index document should be
+`index.html` and the error document can be set if you have one.
 
-Nulla posuere sollicitudin aliquam ultrices sagittis. Est pellentesque elit ullamcorper dignissim cras. Quis enim lobortis scelerisque fermentum dui faucibus in. Nibh sed pulvinar proin gravida hendrerit lectus. Urna et pharetra pharetra massa massa. Sed blandit libero volutpat sed cras ornare. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. In est ante in nibh mauris. Ridiculus mus mauris vitae ultricies leo. Duis convallis convallis tellus id interdum. Euismod lacinia at quis risus sed vulputate odio. Pretium vulputate sapien nec sagittis aliquam. Tristique magna sit amet purus. Viverra mauris in aliquam sem fringilla ut. Sit amet purus gravida quis. Egestas dui id ornare arcu. Suscipit tellus mauris a diam.
+![S3 Static Website Hosting](./img/static_website_hosting.png)
 
-## Hello World Again
+Now turn off "Block all public access" in the Permissions tab and add the below
+Bucket Policy and CORS Configuration.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper. Iaculis urna id volutpat lacus laoreet. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Aenean sed adipiscing diam donec adipiscing tristique. Donec ac odio tempor orci dapibus ultrices in iaculis. Felis eget velit aliquet sagittis id consectetur purus ut. Integer vitae justo eget magna. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Vitae nunc sed velit dignissim sodales ut eu sem. Donec adipiscing tristique risus nec feugiat in fermentum. Amet aliquam id diam maecenas ultricies mi. Id ornare arcu odio ut sem nulla pharetra.
+![S3 Public Access](./img/public_access.png)
 
-Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Fames ac turpis egestas maecenas pharetra convallis posuere. Eros in cursus turpis massa. Magnis dis parturient montes nascetur ridiculus. Amet massa vitae tortor condimentum lacinia quis vel eros donec. Dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Rhoncus urna neque viverra justo nec ultrices dui sapien. Pretium vulputate sapien nec sagittis aliquam malesuada. Ac tortor dignissim convallis aenean et tortor. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Non arcu risus quis varius quam quisque id diam vel. Feugiat nisl pretium fusce id velit ut tortor. Nec dui nunc mattis enim ut.
+#### Bucket Policy
 
-At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Magna fermentum iaculis eu non diam. Felis eget velit aliquet sagittis id consectetur. Gravida quis blandit turpis cursus in. Justo donec enim diam vulputate ut pharetra sit. Suscipit tellus mauris a diam maecenas sed enim ut. Vulputate enim nulla aliquet porttitor. Eu nisl nunc mi ipsum. Mollis nunc sed id semper risus in hendrerit gravida. Vel orci porta non pulvinar neque. Mattis rhoncus urna neque viverra justo nec ultrices. Pulvinar mattis nunc sed blandit. Eu nisl nunc mi ipsum faucibus vitae. Nisl suscipit adipiscing bibendum est. Condimentum vitae sapien pellentesque habitant morbi tristique senectus.
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::www.ethanaa.com/*"
+        }
+    ]
+}
+```
 
-At in tellus integer feugiat scelerisque. A arcu cursus vitae congue mauris rhoncus. Vitae proin sagittis nisl rhoncus. Adipiscing commodo elit at imperdiet dui accumsan. Sit amet purus gravida quis blandit turpis cursus in. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Est ultricies integer quis auctor. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Id aliquet risus feugiat in ante metus. Molestie a iaculis at erat pellentesque. Consectetur adipiscing elit duis tristique sollicitudin nibh. Eget arcu dictum varius duis at consectetur. Tellus in metus vulputate eu scelerisque felis imperdiet. Eget mi proin sed libero. Mi eget mauris pharetra et ultrices neque ornare aenean. Magna ac placerat vestibulum lectus mauris. Arcu non odio euismod lacinia at quis risus. At elementum eu facilisis sed odio morbi.
+#### CORS Configuration
 
-Nulla posuere sollicitudin aliquam ultrices sagittis. Est pellentesque elit ullamcorper dignissim cras. Quis enim lobortis scelerisque fermentum dui faucibus in. Nibh sed pulvinar proin gravida hendrerit lectus. Urna et pharetra pharetra massa massa. Sed blandit libero volutpat sed cras ornare. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. In est ante in nibh mauris. Ridiculus mus mauris vitae ultricies leo. Duis convallis convallis tellus id interdum. Euismod lacinia at quis risus sed vulputate odio. Pretium vulputate sapien nec sagittis aliquam. Tristique magna sit amet purus. Viverra mauris in aliquam sem fringilla ut. Sit amet purus gravida quis. Egestas dui id ornare arcu. Suscipit tellus mauris a diam.
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>HEAD</AllowedMethod>
+    <MaxAgeSeconds>3000</MaxAgeSeconds>
+    <AllowedHeader>Content-Length</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+```
 
-## Hello World
+*This CORS config exists primarily to allow the `Content-Length` header to be
+passed to CloudFront so that it will perform compression.*
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper. Iaculis urna id volutpat lacus laoreet. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Aenean sed adipiscing diam donec adipiscing tristique. Donec ac odio tempor orci dapibus ultrices in iaculis. Felis eget velit aliquet sagittis id consectetur purus ut. Integer vitae justo eget magna. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Vitae nunc sed velit dignissim sodales ut eu sem. Donec adipiscing tristique risus nec feugiat in fermentum. Amet aliquam id diam maecenas ultricies mi. Id ornare arcu odio ut sem nulla pharetra.
+### Amazon Certificate Manager
 
-Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Fames ac turpis egestas maecenas pharetra convallis posuere. Eros in cursus turpis massa. Magnis dis parturient montes nascetur ridiculus. Amet massa vitae tortor condimentum lacinia quis vel eros donec. Dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Rhoncus urna neque viverra justo nec ultrices dui sapien. Pretium vulputate sapien nec sagittis aliquam malesuada. Ac tortor dignissim convallis aenean et tortor. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Phasellus faucibus scelerisque eleifend donec pretium vulputate. Non arcu risus quis varius quam quisque id diam vel. Feugiat nisl pretium fusce id velit ut tortor. Nec dui nunc mattis enim ut.
+![Certificate Manager](./img/aws-certificate-manager.svg =170x120)
 
-At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Magna fermentum iaculis eu non diam. Felis eget velit aliquet sagittis id consectetur. Gravida quis blandit turpis cursus in. Justo donec enim diam vulputate ut pharetra sit. Suscipit tellus mauris a diam maecenas sed enim ut. Vulputate enim nulla aliquet porttitor. Eu nisl nunc mi ipsum. Mollis nunc sed id semper risus in hendrerit gravida. Vel orci porta non pulvinar neque. Mattis rhoncus urna neque viverra justo nec ultrices. Pulvinar mattis nunc sed blandit. Eu nisl nunc mi ipsum faucibus vitae. Nisl suscipit adipiscing bibendum est. Condimentum vitae sapien pellentesque habitant morbi tristique senectus.
+[ACM](https://aws.amazon.com/certificate-manager/) will provide us a free public
+certificate for our domain name so that we can use HTTPS.
 
-At in tellus integer feugiat scelerisque. A arcu cursus vitae congue mauris rhoncus. Vitae proin sagittis nisl rhoncus. Adipiscing commodo elit at imperdiet dui accumsan. Sit amet purus gravida quis blandit turpis cursus in. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Est ultricies integer quis auctor. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Id aliquet risus feugiat in ante metus. Molestie a iaculis at erat pellentesque. Consectetur adipiscing elit duis tristique sollicitudin nibh. Eget arcu dictum varius duis at consectetur. Tellus in metus vulputate eu scelerisque felis imperdiet. Eget mi proin sed libero. Mi eget mauris pharetra et ultrices neque ornare aenean. Magna ac placerat vestibulum lectus mauris. Arcu non odio euismod lacinia at quis risus. At elementum eu facilisis sed odio morbi.
+Make sure to request a certificate which covers all required subdomains i.e.
+`ethanaa.com` as well as `www.ethanaa.com`.
 
-Nulla posuere sollicitudin aliquam ultrices sagittis. Est pellentesque elit ullamcorper dignissim cras. Quis enim lobortis scelerisque fermentum dui faucibus in. Nibh sed pulvinar proin gravida hendrerit lectus. Urna et pharetra pharetra massa massa. Sed blandit libero volutpat sed cras ornare. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. In est ante in nibh mauris. Ridiculus mus mauris vitae ultricies leo. Duis convallis convallis tellus id interdum. Euismod lacinia at quis risus sed vulputate odio. Pretium vulputate sapien nec sagittis aliquam. Tristique magna sit amet purus. Viverra mauris in aliquam sem fringilla ut. Sit amet purus gravida quis. Egestas dui id ornare arcu. Suscipit tellus mauris a diam.
+I used DNS validation and the process of adding the CNAME records was straight
+forward with both GoDaddy and subsequently, Route53.
+
+### Amazon CloudFront
+
+![CloudFront](./img/aws-cloudfront.svg =170x120)
+
+[CloudFront](https://aws.amazon.com/cloudfront/) acts as the content delivery
+network (CDN) so that the site retains performance no matter where in the world
+its being accessed from. It also has the added benefit of DDoS mitigation.
+
+Create a distribution. The "Origin Domain Name" should be copied from the S3
+bucket's static website hosting configuration. The desired URL is labeled
+"Endpoint".
+
+Redirect HTTP to HTTPS, configure TTL, "Compress Objects Automatically", choose
+"Custom SSL Certificate" and select the previously created public certificate.
+
+### Amazon Route53
+
+![Route53](./img/aws-route53.svg =170x120)
+
+[Route53](https://aws.amazon.com/route53/) is used as the Domain Name System
+(DNS). Domain name subscriptions often come with DNS capabilities, but due to
+the limitations I experienced with GoDaddy (can only point an A record at an IP
+address) Route53 was the obvious choice. It's integrated into AWS and you can
+point an A record to a CloudFront distribution.
+
+- Create an A record with an alias targeting the CloudFront domain name.
+- Create a CNAME record with the name `www` and value `ethanaa.com`.
+
+Given some time for all of changes to propogate, the new static site is now
+available over HTTPS with a valid certificate (both at the naked domain and the
+www subdomain) and HTTP requests are automatically upgraded to HTTPS.
+
+![Mobile Google PageSpeed Insights](./img/page_speed_mobile.png)
+
+[Google PageSpeed
+Insights](https://developers.google.com/speed/pagespeed/insights/) confirms
+excellent mobile and desktop performance with consistent scores in the high 90s
+for mobile and often 100 for desktop.
+
+![Desktop Google PageSpeed Insights](./img/page_speed_desktop.png)
+
+Updates to come when I find out how much it's costing me! :dollar:
