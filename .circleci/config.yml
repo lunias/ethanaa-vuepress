@@ -76,7 +76,7 @@ jobs:
           name: 'Deploy to S3'
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              ./s3deploy -source=~/project/docs/.vuepress/dist -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v
+              ~/project/s3deploy -source=~/project/docs/.vuepress/dist -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v
             else
               echo "Not master branch, dry run only"
               echo "Working directory files:"
@@ -85,7 +85,7 @@ jobs:
               cd ~/project/docs/.vuepress/dist
               echo "Built files:"
               ls -lAF
-              ./s3deploy -source=~/project/docs/.vuepress/dist -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v -try
+              ~/project/s3deploy -source=~/project/docs/.vuepress/dist -region=us-east-1 -bucket=www.ethanaa.com -distribution-id=E272FZWDOFIWKK -v -try
             fi
 
 #------------------------------------------------------------
