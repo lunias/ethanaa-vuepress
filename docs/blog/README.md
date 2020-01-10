@@ -18,12 +18,104 @@ pageClass: custom-page-class
 
 # 1/9/2020
 
+## Document Search with Algolia
+
+[Algolia](https://www.algolia.com/) provides a simple to use, full-text search
+API; that lucky for us, is supported by the default VuePress theme.
+
+In order to integrate with that functionality we need to make an account with
+Algolia and create an index. Then we need to copy our "Seach-Only API Key",
+"Application ID", and chosen index name into our VuePress theme config.
+
+### VuePress config.js
+```javascript
+themeConfig: {
+  algolia: {
+    apiKey: '692c04c8f1e443e098cfb2511ab8c99b',
+    appId: '2SM2BJA0PV',
+    indexName: 'ethanaa'
+  }
+}
+```
+
+Next we need to create a docsearch-scraper config that will instruct the Algolia
+scraper on how to index our site.
+
+### docsearch-scraper CONFIG
+```json
+{
+  "index_name": "ethanaa",
+  "start_urls": [
+    "https://ethanaa.com/"
+  ],
+  "stop_urls": [],
+  "selectors": {
+    "lvl0": {
+      "selector": "p.sidebar-heading.open",
+      "global": true,
+      "default_value": "Documentation"
+    },
+    "lvl1": ".theme-default-content h1",
+    "lvl2": ".theme-default-content h2",
+    "lvl3": ".theme-default-content h3",
+    "lvl4": ".theme-default-content h4",
+    "lvl5": ".theme-default-content h5",
+    "text": ".theme-default-content p, .theme-default-content li",
+    "lang": {
+      "selector": "/html/@lang",
+      "type": "xpath",
+      "global": true,
+      "default_value": "en-US"
+    }
+  },
+  "strip_chars": " .,;:#",
+  "custom_settings": {
+    "attributesForFaceting": [
+      "lang"
+    ]
+  }
+}
+```
+
+Save the config to a file and then use `jq` to reduce it to a single line:
+
+```bash
+cat ethanaa.json | jq -r tostring
+```
+
+Create a `.env` file:
+
+```bash
+APPLICATION_ID=2SM2BJK0PC
+API_KEY=${Admin API Key}
+CONFIG={"index_name":"ethanaa","start_urls":["https://ethanaa.com/"],"stop_urls":[],"selectors":{"lvl0":{"selector":"p.sidebar-heading.open","global":true,"default_value":"Documentation"},"lvl1":".theme-default-content h1","lvl2":".theme-default-content h2","lvl3":".theme-default-content h3","lvl4":".theme-default-content h4","lvl5":".theme-default-content h5","text":".theme-default-content p, .theme-default-content li","lang":{"selector":"/html/@lang","type":"xpath","global":true,"default_value":"en-US"}},"strip_chars":" .,;:#","custom_settings":{"attributesForFaceting":["lang"]}}
+```
+
+Finally, run the docsearch-scraper docker image against your `.env` file:
+
+```bash
+docker run -it --env-file=.env algolia/docsearch-scraper
+```
+
+The site will then be scraped and the index updated in Algolia.
+
+```bash
+> DocSearch: https://ethanaa.com/ 111 records)
+> DocSearch: https://ethanaa.com/blog/ 72 records)
+
+Nb hits: 183
+```
+
+![Algolia Index](./img/algolia_index.png)
+
+Give the search bar a try to see the results in action!
+
 ## Continuous Deployment with CircleCI and s3deploy
 
 Now I have a simple to edit, static site that meets my résumé hosting and
 blogging needs; but deployment is currently a bit tedious. Manually copying the
 built files into the S3 bucket and invalidating the CloudFront distribution
-takes too much time and requires too much use of my mouse to encourage
+takes too much time and requires too much fiddling with my mouse to encourage
 consistent updates. :wink:
 
 So, what am I after? I think a desirable workflow looks something like:
@@ -38,17 +130,18 @@ So, what am I after? I think a desirable workflow looks something like:
 Steps 1, 2, and 3 are already doable; so what about 4, 5, and 6?
 
 Sounds like a job for [CircleCI](https://circleci.com/)! CircleCI integrates
-with your existing GitHub repository to provide a configurable build / deploy
+with our existing GitHub repository to provide a configurable build / deploy
 pipeline as a service. It also offers a free plan which will work for us in this
 case.
 
 In order to perform the AWS operations of syncing the bucket and invalidating
 the distribution, I've chosen to use the often recommended
 [bep/s3deploy](https://github.com/bep/s3deploy) script. It's kind of like `aws
-s3 sync` but optimized for static sites.
+s3 sync`, but optimized for static sites to modify only the minimal set of
+files.
 
 Setting up CircleCI is as simple as making an account and using their interface
-to set up a project tracking your GitHub repository. Once that's complete, we
+to set up a new project tracking our GitHub repository. Once that's complete, we
 will need to create `.circleci/config.yml` in the root of the repository; but
 before we get to editing it we need to satisfy a prerequisite first: creating a
 deployment service account.
@@ -119,7 +212,16 @@ Now edit `.circleci/config.yml`:
 
 I've separated the config into 3 jobs: `install-dependencies`, `build`, and `deploy`.
 
-Commit the code and push it up to GitHub to trigger a build!
+First the dependencies are installed by running `yarn` as well as downloading
+and extracting the latest release of s3deploy. Then `yarn docs:build` is run and
+my résumé is copied from the root directory into `docs/.vuepress/dist/` so that
+it's processed by s3deploy. Finally, s3deploy is executed targeting our S3
+bucket and CloudFormation distribution.
+
+If you push to any other branch than master then s3deploy will be run with
+`-try`; resulting in a dry-run execution that will not modify any AWS objects.
+
+So, let's commit the code and push it up to GitHub to trigger a build!
 
 # 1/8/2020
 
