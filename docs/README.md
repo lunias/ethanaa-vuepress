@@ -14,15 +14,33 @@ features:
   details: Continual learner with a standout history of producing high quality deliverables.
 footer: MIT Licensed | Copyright © 2019-present Ethan Anderson
 pageClass: custom-page-class
+description: |
+  My name is Ethan Anderson; I currently live in Minnesota, just northwest of Minneapolis.
+
+  I enjoy creating software that is meaningful, accessible, and focused. The
+  majority of my experience has lent itself to building server-side applications
+  and web services, but I'm also motivated to continuously improve my skills in
+  front end development and UX design. I believe strongly in the value of
+  delivering customized software solutions which are polished and useable. I have
+  a background building applications from start to finish, both on my own and in
+  collaboration with a team.
 ---
 
 # About Me
 
-My name is Ethan Anderson; I am 31 years old and I currently live in Minnesota, just northwest of Minneapolis.
+My name is Ethan Anderson; I am 31 years old and I currently live in Minnesota,
+just northwest of Minneapolis.
 
-I enjoy creating software that is meaningful, accessible, and focused. The majority of my experience has lent itself to building server-side applications and web services, but I'm also motivated to continuously improve my skills in front end development and UX design. I believe strongly in the value of delivering customized software solutions which are polished and useable. I have a background building applications from start to finish, both on my own and in collaboration with a team.
+I enjoy creating software that is meaningful, accessible, and focused. The
+majority of my experience has lent itself to building server-side applications
+and web services, but I'm also motivated to continuously improve my skills in
+front end development and UX design. I believe strongly in the value of
+delivering customized software solutions which are polished and useable. I have
+a background building applications from start to finish, both on my own and in
+collaboration with a team.
 
-In my personal life I love writing code, watching movies, rock climbing, playing boardgames, and spending time with friends and family.
+In my personal life I love writing code, watching movies, rock climbing, playing
+boardgames, and spending time with friends and family.
 
 # Résumé
 
@@ -30,9 +48,20 @@ In my personal life I love writing code, watching movies, rock climbing, playing
 
 ## Executive Summary
 
-Highly skilled full-stack software professional with over 10 years experience who has a broad range of software development and information technology skills. Equally comfortable serving a role working on back-end (Java, Spring, Hibernate / JPA), integration (REST, SOAP, Kafka, RabbitMQ), or front-end (JavaScript, Vue.js, Node.js, HTML5). Also knowledgeable about creating domain models and designing database schemas using a variety of databases including MS SQL, Oracle, H2, MongoDB, and Elasticsearch. Well-versed in UNIX and used to working with a CLI.
+Highly skilled full-stack software professional with over 10 years experience
+who has a broad range of software development and information technology skills.
+Equally comfortable serving a role working on back-end (Java, Spring, Hibernate
+/ JPA), integration (REST, SOAP, Kafka, RabbitMQ), or front-end (JavaScript,
+Vue.js, Node.js, HTML5). Also knowledgeable about creating domain models and
+designing database schemas using a variety of databases including MS SQL,
+Oracle, H2, MongoDB, and Elasticsearch. Well-versed in UNIX and used to working
+with a CLI.
 
-Passionate continual learner who quickly adapts to new technologies and problem spaces. Strong problem solver who welcomes challenging tasks. Stand out history of meeting or exceeding timelines for customers with high quality deliverables. Excellent communicator, enjoyed by teammates for collaborative approach and positivity as well as expertise.
+Passionate continual learner who quickly adapts to new technologies and problem
+spaces. Strong problem solver who welcomes challenging tasks. Stand out history
+of meeting or exceeding timelines for customers with high quality deliverables.
+Excellent communicator, enjoyed by teammates for collaborative approach and
+positivity as well as expertise.
 
 ### Skills Inventory
 

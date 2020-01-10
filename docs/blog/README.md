@@ -14,6 +14,9 @@ features:
   details: Continual learner with a standout history of producing high quality deliverables.
 footer: MIT Licensed | Copyright © 2019-present Ethan Anderson
 pageClass: custom-page-class
+description: |
+  Personal blog of Ethan Anderson. I'm a Software Engineer living in Minnesota. 
+  I write about my projects which span a variety of technologies including; Java, JavaScript, Spring Boot, JavaFX, AWS, etc.
 ---
 
 # 1/9/2020

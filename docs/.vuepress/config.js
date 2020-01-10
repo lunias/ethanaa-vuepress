@@ -37,7 +37,10 @@ module.exports = {
     ['seo',
      {
        'author': (_, $site) => 'Ethan Anderson',
-       'tags': $page => ['Spring', 'Spring Boot', 'Java', 'AWS', 'Software Engineer', 'MN', 'Minnesota', 'Resume', 'Vue.js', 'REST', 'Postgres'],
+       'tags': $page => ['Spring', 'Spring Boot', 'Java', 'AWS',
+                         'Software Engineer', 'MN', 'Minnesota',
+                         'Resume', 'Vue.js', 'REST', 'Postgres',
+                         'Consultant', 'JavaScript', 'S3', 'Vivial'],
        'image': ($page, $site) => 'https://ethanaa.com/eanderson.jpg'
      }
     ]
