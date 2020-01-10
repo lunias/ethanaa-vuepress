@@ -1,4 +1,5 @@
 ---
+sidebar: auto
 title: Document Search with Algolia
 date: 2020-01-09 19:34:12
 excerpt: |
@@ -10,10 +11,10 @@ blog: true
 tags:
     - Algolia
     - Docker    
-    - VuePress
+    - VuePress    
 ---
 
-# January 9th
+# January 9th, 2020
 
 ## Document Search with Algolia
 
@@ -83,7 +84,7 @@ cat ethanaa.json | jq -r tostring
 Create a `.env` file:
 
 ```bash
-APPLICATION_ID=2SM2BJK0PC
+APPLICATION_ID=2SM2BJA0PV
 API_KEY=${Admin API Key}
 CONFIG={"index_name":"ethanaa","start_urls":["https://ethanaa.com/"],"stop_urls":[],"selectors":{"lvl0":{"selector":"p.sidebar-heading.open","global":true,"default_value":"Documentation"},"lvl1":".theme-default-content h1","lvl2":".theme-default-content h2","lvl3":".theme-default-content h3","lvl4":".theme-default-content h4","lvl5":".theme-default-content h5","text":".theme-default-content p, .theme-default-content li","lang":{"selector":"/html/@lang","type":"xpath","global":true,"default_value":"en-US"}},"strip_chars":" .,;:#","custom_settings":{"attributesForFaceting":["lang"]}}
 ```

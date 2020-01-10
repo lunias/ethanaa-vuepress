@@ -1,4 +1,5 @@
 ---
+sidebar: auto
 title: Conversion to a Static Site with VuePress and AWS S3
 date: 2020-01-08 21:47:18
 excerpt: |
@@ -17,7 +18,7 @@ tags:
     - Route53
 ---
 
-# January 8th
+# January 8th, 2020
 
 ## Conversion to a Static Site with VuePress and AWS S3
 

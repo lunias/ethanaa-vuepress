@@ -83,9 +83,9 @@ export default {
             v-if="selectedTags.length > 0"
             class="filtered-heading"
         >
-            <h2>
-                Filtered by {{ selectedTags.join(',') }}
-            </h2>
+            <h3>
+                Filtered by tags: {{ selectedTags.join(', ') }}
+            </h3>
             <button
                 type="button"
                 @click="resetTags"
@@ -101,11 +101,14 @@ export default {
                     v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
                     :item="item"
                 />
-                <ul v-for="tag in item.frontmatter.tags" class="blog-list__tags">
-                    <li>
+                <span class="tag-span">
+                Tags:
+                <ul class="blog-list__tags">
+                    <li v-for="tag in item.frontmatter.tags">
                         <button @click="addTag(tag)">{{ tag }}</button>
                     </li>
                 </ul>
+                </span>
             </li>
         </ul>
 
@@ -135,9 +138,17 @@ export default {
 }
 .blog-list__item {
 	list-style-type: none;
+  margin-bottom: 3.5rem;
+}
+.tag-span {
+  display: inline-flex;
 }
 .blog-list__tags {
+    list-style: none;
     margin-bottom: 15px;
+}
+.blog-list__tags li {
+    display: inline;
 }
 .button--pagination {
 	background-color: #32c8cf;
@@ -162,6 +173,7 @@ export default {
 }
 .filtered-heading {
     display: flex;
+    margin-bottom: 1.5rem;
 }
 .pagination {
     text-align: center;

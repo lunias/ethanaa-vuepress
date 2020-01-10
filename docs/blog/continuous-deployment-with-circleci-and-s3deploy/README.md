@@ -1,4 +1,5 @@
 ---
+sidebar: auto
 title: Continuous Deployment with CircleCI and s3deploy
 date: 2020-01-09 23:12:19
 excerpt: |
@@ -17,7 +18,7 @@ tags:
     - IAM
 ---
 
-# January 9th
+# January 9th, 2020
 
 ## Continuous Deployment with CircleCI and s3deploy
 
