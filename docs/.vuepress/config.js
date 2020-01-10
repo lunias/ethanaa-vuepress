@@ -9,18 +9,17 @@ module.exports = {
       { text: 'About', link: '/#about-me' },
       { text: 'Résumé', link: '/#resume' },
       { text: 'Contact', link: '/#contact' },
-      { text: 'Blog', link: '/blog/' }
-    ],
-    sidebar: [
-      ['/blog/', 'Blog'],
-      ['/', 'Résumé']
+      { text: 'Blog', link: '/blog/' },
+      { text: 'Archive', link: '/archive/' }
     ],
     smoothScroll: true,
     algolia: {
       apiKey: '692c0488f1e443e078cfb2511ab8c996',
       appId: '2SM2BJK0PC',
       indexName: 'ethanaa'
-    }
+    },
+    pageSize: 5,
+	  startPage: 0
   },
   plugins: [
     [
@@ -32,6 +31,7 @@ module.exports = {
     ['vuepress-plugin-code-copy', {
       'color': '#E37372'
     }],
+    ['vuepress-plugin-reading-time'],
     ['@vuepress/back-to-top'],
     ['@vuepress/medium-zoom'],
     ['seo',
@@ -41,7 +41,8 @@ module.exports = {
                          'Software Engineer', 'MN', 'Minnesota',
                          'Resume', 'Vue.js', 'REST', 'Postgres',
                          'Consultant', 'JavaScript', 'S3', 'Vivial'],
-       'image': ($page, $site) => 'https://ethanaa.com/eanderson.jpg'
+       'image': ($page, $site) => 'https://ethanaa.com/eanderson.jpg',
+       'description': $page => $page.frontmatter.description || $page.frontmatter.excerpt
      }
     ]
   ],

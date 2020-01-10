@@ -9,6 +9,7 @@
     "@vuepress/plugin-medium-zoom": "^1.2.0",
     "markdown-it-imsize": "^2.0.1",
     "vuepress": "^1.2.0",
+    "vuepress-plugin-reading-time": "^0.1.1",
     "vuepress-plugin-seo": "^0.1.2"
   },
   "dependencies": {
