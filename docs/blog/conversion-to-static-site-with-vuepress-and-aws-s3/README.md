@@ -199,3 +199,7 @@ for mobile and often 100 for desktop.
 ![Desktop Google PageSpeed Insights](./img/page_speed_desktop.png)
 
 Updates to come when I find out how much it's costing me! :dollar:
+
+<ClientOnly>
+  <Disqus shortname="ethanaa" />
+</ClientOnly>

@@ -132,3 +132,7 @@ If you push to any other branch than master then s3deploy will be run with
 `-try`; resulting in a dry-run execution that will not modify any AWS objects.
 
 So, let's commit the code and push it up to GitHub to trigger a build!
+
+<ClientOnly>
+  <Disqus shortname="ethanaa" />
+</ClientOnly>

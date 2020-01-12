@@ -107,3 +107,7 @@ Nb hits: 183
 ![Algolia Index](./img/algolia_index.png)
 
 Give the search bar a try to see the results in action!
+
+<ClientOnly>
+  <Disqus shortname="ethanaa" />
+</ClientOnly>
