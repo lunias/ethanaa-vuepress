@@ -24,6 +24,7 @@ description: |
   delivering customized software solutions which are polished and useable. I have
   a background building applications from start to finish, both on my own and in
   collaboration with a team.
+noGlobalSocialShare: true
 ---
 
 # About Me
