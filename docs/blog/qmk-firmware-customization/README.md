@@ -79,6 +79,17 @@ Other references:
 
 ### Custom Configuration
 
+My configuration is an extension of [@drashna's](https://github.com/drashna)
+config (from some time ago now). I've got a few key features implemented:
+
+- Static RGB lighting (single color)
+- Flash RGB lighting on FN hold (alternate color)
+- RGB twinkle effect when typing
+- Braces can alternately be typed by pressing modifiers
+  - Shift == Parentheses
+  - Alt == Square brackets
+  - Shift + Alt == Brackets
+
 #### Userspace
 
 [QMK Userspace](https://beta.docs.qmk.fm/features/feature_userspace)
