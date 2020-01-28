@@ -24,7 +24,7 @@ export default {
 <template>
 	<section>
         <time>{{ formatPublishDate }}</time>
-        <h2 class="blog-post__title">{{ item.frontmatter.title }}</h2>
+        <h2 class="blog-post__title"><router-link :to="item.path">{{ item.frontmatter.title }}</router-link></h2>
         <p v-if="item.frontmatter.excerpt">{{ item.frontmatter.excerpt }}</p>
         <p v-if="item.readingTime">Estimated {{ item.readingTime.text }} ({{ item.readingTime.words }} words)</p>
         <router-link class="button blog-post__button" :to="item.path">Read More ></router-link>
