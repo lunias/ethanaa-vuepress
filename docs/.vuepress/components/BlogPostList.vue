@@ -24,7 +24,6 @@ export default {
     computed: {
         filteredList() {
             if (this.pages) {
-                
                 return this.pages.filter(item => {
                     const isBlogPost = !!item.frontmatter.blog
                     const isReadyToPublish = new Date(item.frontmatter.date) <= new Date()
@@ -101,7 +100,8 @@ export default {
                     v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
                     :item="item"
                 />
-                <span class="tag-span">
+                <span class="tag-span"
+                    v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize">
                 Tags:
                 <ul class="blog-list__tags">
                     <li v-for="tag in item.frontmatter.tags">
@@ -115,14 +115,14 @@ export default {
         <div class="pagination">
             <button v-show="currentPage > 0" 
                 @click="previousPage"
-                class="button--pagination"
+                class="button"
                 type="button" 
             >
                 Previous
             </button>
             <button v-show="currentPage < totalPages - 1"
                 @click="nextPage"
-                class="button--pagination"
+                class="button"
                 type="button"
             >
                 Next
@@ -150,6 +150,19 @@ export default {
 .blog-list__tags li {
     display: inline;
 }
+
+.button {
+	border: 1px solid #9E2A2B;
+	border-radius: 4px;
+	color: #9E2A2B;
+	font-size: 0.8rem;
+	padding: 0.5rem 0.75rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	box-shadow: 0 0;
+	transition: background-color 0.2s ease-in, color 0.2s ease-in;
+}
+
 .button--pagination {
 	background-color: #32c8cf;
 	border-radius: 4px;

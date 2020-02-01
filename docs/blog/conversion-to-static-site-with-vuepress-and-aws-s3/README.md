@@ -196,9 +196,13 @@ Insights](https://developers.google.com/speed/pagespeed/insights/) confirms
 excellent mobile and desktop performance with consistent scores in the high 90s
 for mobile and often 100 for desktop.
 
-![Desktop Google PageSpeed Insights](./img/page_speed_desktop.png)
+![Desktop Google PageSpeed Insights](./img/page_speed_desktop.png**
 
 Updates to come when I find out how much it's costing me! :dollar:
+
+:::tip Edit
+**Update 02-01-2020**: January is over and I have some first monthly cost data to [share](/blog/static-site-cost-update).
+:::
 
 <ClientOnly>
   <Disqus shortname="ethanaa" />
