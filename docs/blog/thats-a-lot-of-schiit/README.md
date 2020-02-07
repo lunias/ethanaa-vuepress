@@ -62,6 +62,15 @@ button on the remote to completely mute the preamp.
 From [Saga+ Manual](https://www.schiit.com/public/upload/PDF/saga%20plus%20manual.pdf)
 :::
 
+## Audio Player
+
+I'm using Windows 10 with [foobar2000](https://www.foobar2000.org/) and the
+[WASAPI output
+support](https://www.foobar2000.org/components/view/foo_out_wasapi) component.
+Currently running the default theme, but interested in trying out
+[DarkOne4Mod](https://www.deviantart.com/tedgo/art/DarkOne4Mod-v1-637189138) or
+some other nice looking skins.
+
 ## Components
 
 ### WYRD
@@ -232,6 +241,10 @@ hopefully achieve the headphone / speaker toggle that I wanted out of the Saga+.
 Regardless, I think I'd need to add another SYS if I want to avoid having to
 unplug my headphones.
 
+I love the remote and the motorized potentiometer: very satisfying and useful!
+It's really nice to be able to control the volume from the perfect listening
+spot.
+
 #### Hybrid Tube Buffer Stage vs Passive
 
 [Tube Rolling of Schiit Saga Pre-amplifier](https://www.audiosciencereview.com/forum/index.php?threads/tube-rolling-of-schiit-saga-pre-amplifier.6522/)
@@ -323,11 +336,13 @@ desk with their bass. Oh, and you can connect them to pretty much anything.
 
 [Vanatoo Transparent Zero Review](http://noaudiophile.com/Vanatoo_Transparent_Zero/)
 
-All of the reviews that I've seen are positive. At this price point for small
-desk speakers, there is little competition.
+All of the reviews that I've seen are positive. At this price point, for small
+desk speakers; there appears to be little competition.
 
 Looking forward to taking some measurements with
-[REW](https://www.roomeqwizard.com/) and getting them dialed in 100%.
+[REW](https://www.roomeqwizard.com/) and my
+[UMIK-1](https://www.minidsp.com/products/acoustic-measurement/umik-1) to get
+them dialed in 100%.
 
 ## Cables
 
