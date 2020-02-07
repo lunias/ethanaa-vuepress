@@ -1,9 +1,12 @@
 ---
 sidebar: auto
 title: That's a lot of Schiit!
-date: 2020-02-07 10:20:00
+date: 2020-02-06 10:20:00
 excerpt: |
-  Schiit...
+  I set out to create a budget-ish, audiophile-quality audio setup for my desk
+  using Schiit separates. Convenience, tactility, and extensibility were key
+  objectives for me. I've designed this system with the intent of having easily
+  accessible analog controls for all aspects of the audio experience.
 type: post
 blog: true
 tags:
@@ -11,7 +14,7 @@ tags:
     - Audio
 ---
 
-# February 7th, 2020
+# February 6th, 2020
 
 ## Desk Audio
 
