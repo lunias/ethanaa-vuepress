@@ -39,6 +39,29 @@ module.exports = {
         'ga': 'UA-137350132-2' // UA-00000000-0
       }
     ],
+    [
+      'vuepress-plugin-container',
+      {
+          type: 'right',
+          defaultTitle: '',
+      },
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+          type: 'quote',
+          before: info => `<div class="quote"><p class="title">${info}</p>`,
+          after: '</div>',
+      },
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+          type: 'quote-warn',
+          before: info => `<div class="quote-warn"><p class="title">${info}</p>`,
+          after: '</div>',
+      },
+    ],
     ['vuepress-plugin-code-copy', {
       'color': '#E37372'
     }],
