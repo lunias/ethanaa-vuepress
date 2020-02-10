@@ -92,7 +92,34 @@ module.exports = {
     ],
     ['sitemap', {
         hostname: 'https://ethanaa.com',
-        exclude: ['/404.html']
+        exclude: ['/404.html'],
+        urls: [
+            { url: '/#about', changefreq: 'monthly'},
+            { url: '/#resume', changefreq: 'monthly'},
+            { url: '/#contact', changefreq: 'monthly'}
+        ]
+    }],
+    ['robots', {
+        /**
+         * @host
+         * Mandatory, You have to provide the host URL
+         */
+        host: "https://ethanaa.com",
+        /**
+         * @disallowAll
+         * Optional: if it's true, all others options are ignored and exclude all robots from the entire server
+         */
+        disallowAll: false,
+        /**
+         * @allowAll
+         * Optional: if it's true and @disallowAll is false, all others options are ignored and allow all robots complete access
+         */
+        allowAll: true,
+        /**
+         * @sitemap
+         * Optional, by default: sitemap.xml
+         */
+        sitemap: "/sitemap.xml"
     }],
     ['disqus'],
     ['social-share',
