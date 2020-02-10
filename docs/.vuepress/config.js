@@ -12,6 +12,9 @@ const extendsNetworks = {
 module.exports = {
   title: 'Ethan Anderson',
   description: 'Ethan Anderson\'s Résumé (Software Engineer) and Blog',
+  head: [
+      ['link', { rel: 'alternate', type: 'application/rss+xml', href: '/rss.xml', title: 'ethanaa.com RSS Feed' }]
+  ],
   themeConfig: {
     lastUpdated: 'Last Updated',
     logo: '/eanderson.jpg',
@@ -65,6 +68,18 @@ module.exports = {
     ['vuepress-plugin-code-copy', {
       'color': '#E37372'
     }],
+    [
+      'vuepress-plugin-rss',
+      {
+          base_url: '/', // required
+          site_url: 'https://ethanaa.com', // required
+          copyright: '2019-present Ethan Anderson', // optional
+          // filter some post
+          filter: (frontmatter) => { return true },
+          // How many articles
+          count: 20
+      }
+    ],
     ['vuepress-plugin-reading-time'],
     ['@vuepress/back-to-top'],
     ['@vuepress/medium-zoom'],

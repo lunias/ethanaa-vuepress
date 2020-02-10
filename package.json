@@ -11,6 +11,7 @@
     "vuepress": "^1.2.0",
     "vuepress-plugin-disqus": "^0.1.1",
     "vuepress-plugin-reading-time": "^0.1.1",
+    "vuepress-plugin-rss": "^2.0.0",
     "vuepress-plugin-seo": "^0.1.2",
     "vuepress-plugin-social-share": "^0.1.2"
   },
