@@ -252,7 +252,7 @@ spot.
 I'm running the stock 6SN7 JJ New Production tubes.
 
 Swapping between the passive and active modes produces almost no difference to
-my ears. I *think** I prefer the active mode, it's almost unnoticeably louder
+my ears. I *think* I prefer the active mode, it's almost unnoticeably louder
 (:laughing:) and slightly warmer?
 
 I'd like to try tube rolling (vintage?) to see if it changes the sound in a more

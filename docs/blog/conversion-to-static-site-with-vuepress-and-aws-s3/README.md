@@ -196,7 +196,7 @@ Insights](https://developers.google.com/speed/pagespeed/insights/) confirms
 excellent mobile and desktop performance with consistent scores in the high 90s
 for mobile and often 100 for desktop.
 
-![Desktop Google PageSpeed Insights](./img/page_speed_desktop.png**
+![Desktop Google PageSpeed Insights](./img/page_speed_desktop.png)
 
 Updates to come when I find out how much it's costing me! :dollar:
 
