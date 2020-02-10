@@ -90,6 +90,10 @@ module.exports = {
        'description': $page => $page.frontmatter.description || $page.frontmatter.excerpt
      }
     ],
+    ['sitemap', {
+        hostname: 'https://ethanaa.com',
+        exclude: ['/404.html']
+    }],
     ['disqus'],
     ['social-share',
      {
