@@ -85,7 +85,10 @@ config (from some time ago now). I've got a few key features implemented:
 - Static RGB lighting (single color)
 - Flash RGB lighting on FN hold (alternate color)
 - RGB twinkle effect when typing
-- Braces can alternately be typed by pressing modifiers
+- RGB cycle when plugged in
+- Braces can alternately be typed by pressing the modifiers as opposed to
+  holding them
+  ([Space-cadet](https://beta.docs.qmk.fm/features/feature_space_cadet))
   - Shift == Parentheses
   - Alt == Square brackets
   - Shift + Alt == Brackets

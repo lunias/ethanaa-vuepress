@@ -36,6 +36,8 @@ using Schiit separates. Convenience, tactility, and extensibility were key
 objectives for me. I've designed this system with the intent of having easily
 accessible analog controls for all aspects of the audio experience.
 
+![Desk Picture](./img/desk_pic.jpg)
+
 ### Impressions
 
 There is certainly a noticeable difference in the sound compared to the ODAC.
@@ -249,7 +251,7 @@ spot.
 
 [Tube Rolling of Schiit Saga Pre-amplifier](https://www.audiosciencereview.com/forum/index.php?threads/tube-rolling-of-schiit-saga-pre-amplifier.6522/)
 
-I'm running the stock 6SN7 JJ New Production tubes.
+I'm running the stock 6SN7 JJ New Production tube.
 
 Swapping between the passive and active modes produces almost no difference to
 my ears. I *think* I prefer the active mode, it's almost unnoticeably louder
