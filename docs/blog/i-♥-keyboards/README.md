@@ -94,7 +94,7 @@ a keyboard with this unique layout with me whenever I have real work to do.
 
 ![HHKB Pro 2 Layout](./img/hhkb_layout.png)
 
-*This* is my favorite layout. The HHKB layout; most similar to the [Sun Type
+*This** is my favorite layout. The HHKB layout; most similar to the [Sun Type
 3](https://deskthority.net/wiki/Sun_Type_3) keyboard.
 
 :::quote Common features
@@ -110,7 +110,7 @@ a keyboard with this unique layout with me whenever I have real work to do.
   Fn+`
 - The meta keys are located between the space bar and the alt keys.
 :::right
-From [Wikipedia: Happy Hacking Keyboard](https://en.wikipedia.org/wiki/Happy_Hacking_Keyboard)
+From [Wikipedia: Happy Hacking Keyboard](https://en.wikipedia.org/wiki/Happy_Hacking_Keyboard
 :::
 
 If you haven't used a 60% layout before and can live without dedicated arrow
@@ -118,6 +118,10 @@ keys / a numpad then I highly recommend it. I find that the smaller form-factor
 allows your mouse to sit in a much more ergonomic position on your desk.
 
 ### My HHKB Pro 2
+
+*Don't look too close at the dust, grime, and hair stuck to this one. It's much
+more noticable in the pictures than it is in person. Still needs a good cleaning
+though :shower:*
 
 ![My HHKB Pro 2](./img/KB_-4.jpg)
 
@@ -127,9 +131,13 @@ allows your mouse to sit in a much more ergonomic position on your desk.
 
 Topre are not mechanical key switches in the traditional sense. They're
 electrostatic capacitive and unique amongst Cherry MX and derived switches.
-They're extremely satisfying switches. They have a distinctly soft *thonk*. The
+They're extremely satisfying switches. They have a distinctly soft *thunk*. The
 issue with Topre switches is the availablity of key caps. As most key caps are
 Cherry MX compatible you're limited in your styling potential.
+
+<div id="audio" class="player-wrapper">
+	<audio-player file="https://upload.wikimedia.org/wikipedia/commons/d/d6/Louis-Emmanuel_Jadin_-_Nocturne_No._3_in_G_minor_-_2._Allegro_molto.ogg"></audio-player>
+</div>
 
 #### Key Caps
 
@@ -178,11 +186,15 @@ These switches are better [Cherry
 Browns](https://deskthority.net/wiki/Cherry_MX_Brown). Tactile with a good
 weight. Slightly heavier, but that's my preference.
 
+<div id="audio" class="player-wrapper">
+	<audio-player file="https://upload.wikimedia.org/wikipedia/commons/d/d6/Louis-Emmanuel_Jadin_-_Nocturne_No._3_in_G_minor_-_2._Allegro_molto.ogg"></audio-player>
+</div>
+
 #### Key Caps
 
 ![Akira Red Tokyo60 Key Caps](./img/KB_-14.jpg)
 
-[MT3 Susuwatari](https://drop.com/buy/massdrop-x-matt3o-mt3-susuwatari-custom-keycap-set) [Doubleshot ABS] *coming soon*
+[MT3 Susuwatari](https://drop.com/buy/massdrop-x-matt3o-mt3-susuwatari-custom-keycap-set) [Doubleshot ABS] *Coming Soon*
 
 #### Extras
 
@@ -221,6 +233,10 @@ springs](https://deskthority.net/wiki/IBM_buckling_spring), but they're probably
 the closest analogue at the time of writing. They're pretty loud, but by far the
 most tactile switches that I own. 60g feels heavy on these. In a nice way.
 
+<div id="audio" class="player-wrapper">
+	<audio-player file="https://upload.wikimedia.org/wikipedia/commons/d/d6/Louis-Emmanuel_Jadin_-_Nocturne_No._3_in_G_minor_-_2._Allegro_molto.ogg"></audio-player>
+</div>
+
 #### Key Caps
 
 ![Gyoen Green Tokyo60 Key Caps](./img/KB_-8.jpg)
@@ -244,6 +260,14 @@ think that I'd prefer something with a lower actuation force. They're very
 smooth and quiet switches - not at all mushy, but due to the weight and limited
 tactility I occasionally miss a keystroke. A 100g switch is certainly unique,
 but I plan on replacing them with 67g Healios switches.
+
+100g Aliaz:
+<div id="audio" class="player-wrapper">
+	<audio-player file="https://upload.wikimedia.org/wikipedia/commons/d/d6/Louis-Emmanuel_Jadin_-_Nocturne_No._3_in_G_minor_-_2._Allegro_molto.ogg"></audio-player>
+</div>
+
+67g Healios:
+*Coming Soon*
 
 #### Key Caps
 
