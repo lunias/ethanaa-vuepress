@@ -31,8 +31,8 @@ that I was shipped suffered from a key transposition issue (which has since been
 remedied in later revisions) forcing me to return it. After that I decided to
 splash a bit more cash on what many considered an end-game keyboard at the time.
 I do not regret it. I'm typing this article on that same HHKB and it still looks
-and performs just like the day I bought it. Most craftsmen invest heavily in
-their tools; why should programmers be any different?
+(*sorta*) and performs just like the day I bought it. Most craftsmen invest
+heavily in their tools; why should programmers be any different?
 
 ### The Venerable Space-cadet
 
@@ -142,6 +142,8 @@ Cherry MX compatible you're limited in your styling potential.
 [HHKB HG Embossed Vibration Absorption Mat](http://www.smartimports.net/hhkb-hg-embossed-vibration-absorption-mat/)
 
 [HHKB Keyboard Roof](http://www.smartimports.net/happy-hacking-keyboard-professional-keyboard-roof-clear/)
+
+![HHKB Keyboard Roof](./img/KB_-2.jpg)
 
 ## My [Tokyo60 V2](https://drop.com/buy/massdrop-x-tokyo-keyboard-tokyo60-keyboard-kit)
 
