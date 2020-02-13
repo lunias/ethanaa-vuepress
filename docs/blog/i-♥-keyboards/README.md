@@ -190,8 +190,8 @@ weight. Slightly heavier, but that's my preference.
 	<audio-player file="/snd/zealios_65.mp3"></audio-player>
 </div>
 
-*Sounds pretty bad to my ear with the stock GMK key caps. It sounds much better
-with high profile caps*
+*Sounds pretty bad to my ear with the stock Cherry-profile key caps. It sounds
+much better with high profile caps.*
 
 #### Key Caps
 
