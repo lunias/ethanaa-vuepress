@@ -1,59 +1,63 @@
 <script>
 const convertTimeHHMMSS = (val) => {
-	let hhmmss = new Date(val * 1000).toISOString().substr(11, 8);
-
-	return hhmmss.indexOf("00:") === 0 ? hhmmss.substr(3) : hhmmss;
+	  let hhmmss = new Date(val * 1000).toISOString().substr(11, 8);
+    
+	  return hhmmss.indexOf("00:") === 0 ? hhmmss.substr(3) : hhmmss;
 };
 
 export default {
-  name: 'AudioPlayer',
-	props: {
-		file: {
-			type: String,
-			default: null
-		},
-		autoPlay: {
-			type: Boolean,
-			default: false
-		},
-		loop: {
-			type: Boolean,
-			default: false
-		}
-	},
-	data: () => ({
-		audio: undefined,
-		currentSeconds: 0,
-		durationSeconds: 0,
-		innerLoop: false,
-		loaded: false,
-		playing: false,
-		previousVolume: 35,
-		showVolume: true,
-		volume: 100
-	}),
-	computed: {
-		currentTime() {
-			return convertTimeHHMMSS(this.currentSeconds);
-		},
-		durationTime() {
-			return convertTimeHHMMSS(this.durationSeconds);
-		},
-		percentComplete() {
-			return parseInt(this.currentSeconds / this.durationSeconds * 100);
-		},
-		muted() {
-			return this.volume / 100 === 0;
-		}
-	},
-	watch: {
-		playing(value) {
-			if (value) { return this.audio.play(); }
-			this.audio.pause();
-		},
-		volume(value) {
-			this.showVolume = true;
-			this.audio.volume = this.volume / 100;
+    name: 'AudioPlayer',
+	  props: {
+		    file: {
+			      type: String,
+			      default: null
+		    },
+		    autoPlay: {
+			      type: Boolean,
+			      default: false
+		    },
+		    loop: {
+			      type: Boolean,
+			      default: false
+		    }
+	  },
+	  data: () => ({
+		    audio: undefined,
+		    currentSeconds: 0,
+		    durationSeconds: 0,
+		    innerLoop: false,
+		    loaded: false,
+		    playing: false,
+		    previousVolume: 35,
+		    showVolume: true,
+		    volume: 100
+	  }),
+	  computed: {
+		    currentTime() {
+			      return convertTimeHHMMSS(this.currentSeconds);
+		    },
+		    durationTime() {
+			      return convertTimeHHMMSS(this.durationSeconds);
+		    },
+		    percentComplete() {
+			      return parseInt(this.currentSeconds / this.durationSeconds * 100);
+		    },
+		    muted() {
+			      return this.volume / 100 === 0;
+		    },
+        isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+                || document.documentElement.clientWidth < 650
+        }
+	  },
+	  watch: {
+		    playing(value) {
+			      if (value) { return this.audio.play(); }
+			      this.audio.pause();
+		    },
+		    volume(value) {
+			      this.showVolume = true;
+			      this.audio.volume = this.volume / 100;
 		}
 	},
 	methods: {
@@ -143,7 +147,7 @@ export default {
 						</svg>
 					</a>
 				</div>
-				<div>
+				<div v-if="!isMobile">
 					<a v-on:click.prevent="innerLoop = !innerLoop" href="#" draggable="false">
 						<svg width="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
 							<path v-if="!innerLoop" fill="currentColor" d="M1,12V5h3v6h10V8l5,4.5L14,17v-3H3C1.895,14,1,13.104,1,12z"/>
@@ -151,7 +155,7 @@ export default {
 						</svg>
 					</a>
 				</div>
-				<div>
+				<div v-if="!isMobile">
 					<a v-on:click.prevent="mute" title="Mute" href="#" draggable="false">
 						<svg width="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
 							<path v-if="!muted" fill="currentColor" d="M5.312,4.566C4.19,5.685-0.715,12.681,3.523,16.918c4.236,4.238,11.23-0.668,12.354-1.789c1.121-1.119-0.335-4.395-3.252-7.312C9.706,4.898,6.434,3.441,5.312,4.566z M14.576,14.156c-0.332,0.328-2.895-0.457-5.364-2.928C6.745,8.759,5.956,6.195,6.288,5.865c0.328-0.332,2.894,0.457,5.36,2.926C14.119,11.258,14.906,13.824,14.576,14.156zM15.434,5.982l1.904-1.906c0.391-0.391,0.391-1.023,0-1.414c-0.39-0.391-1.023-0.391-1.414,0L14.02,4.568c-0.391,0.391-0.391,1.024,0,1.414C14.41,6.372,15.043,6.372,15.434,5.982z M11.124,3.8c0.483,0.268,1.091,0.095,1.36-0.388l1.087-1.926c0.268-0.483,0.095-1.091-0.388-1.36c-0.482-0.269-1.091-0.095-1.36,0.388L10.736,2.44C10.468,2.924,10.642,3.533,11.124,3.8z M19.872,6.816c-0.267-0.483-0.877-0.657-1.36-0.388l-1.94,1.061c-0.483,0.268-0.657,0.878-0.388,1.36c0.268,0.483,0.877,0.657,1.36,0.388l1.94-1.061C19.967,7.907,20.141,7.299,19.872,6.816z"/>
@@ -159,7 +163,7 @@ export default {
 						</svg>
 					</a>
 				</div>
-				<div>
+				<div v-if="!isMobile">
 					<a v-on:click.prevent="" v-on:mouseenter="showVolume = true" title="Volume" href="#" style="text-decoration: none;" draggable="false">
 						<svg width="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
 							<path fill="currentColor" d="M19,13.805C19,14.462,18.462,15,17.805,15H1.533c-0.88,0-0.982-0.371-0.229-0.822l16.323-9.055C18.382,4.67,19,5.019,19,5.9V13.805z"/>
