@@ -135,9 +135,11 @@ They're extremely satisfying switches. They have a distinctly soft *thunk*. The
 issue with Topre switches is the availablity of key caps. As most key caps are
 Cherry MX compatible you're limited in your styling potential.
 
+<ClientOnly>
 <div id="audio" class="player-wrapper">
 	<audio-player file="/snd/topre.mp3"></audio-player>
 </div>
+</ClientOnly>
 
 #### Key Caps
 
@@ -186,9 +188,11 @@ These switches are better [Cherry
 Browns](https://deskthority.net/wiki/Cherry_MX_Brown). Tactile with a good
 weight. Slightly heavier, but that's my preference.
 
+<ClientOnly>
 <div id="audio" class="player-wrapper">
 	<audio-player file="/snd/zealios_65.mp3"></audio-player>
 </div>
+</ClientOnly>
 
 *Sounds pretty bad to my ear with the stock Cherry-profile key caps. It sounds
 much better with high profile caps.*
@@ -236,9 +240,11 @@ springs](https://deskthority.net/wiki/IBM_buckling_spring), but they're probably
 the closest analogue at the time of writing. They're pretty loud, but by far the
 most tactile switches that I own. 60g feels heavy on these. In a nice way.
 
+<ClientOnly>
 <div id="audio" class="player-wrapper">
 	<audio-player file="/snd/box_navy.mp3"></audio-player>
 </div>
+</ClientOnly>
 
 #### Key Caps
 
@@ -265,9 +271,11 @@ tactility I occasionally miss a keystroke. A 100g switch is certainly unique,
 but I plan on replacing them with 67g Healios switches.
 
 100g Aliaz:
+<ClientOnly>
 <div id="audio" class="player-wrapper">
 	<audio-player file="/snd/aliaz_100.mp3"></audio-player>
 </div>
+</ClientOnly>
 
 67g Healios:
 *Coming Soon*
