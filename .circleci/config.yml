@@ -10,7 +10,6 @@ defaults: &defaults
     - image: circleci/node:latest
 
 jobs:
-
   #------------------------------------------------------------
   # 1. Install dependencies
   #------------------------------------------------------------
@@ -26,11 +25,11 @@ jobs:
             - v1-deps
 
       - run:
-          name: 'Install yarn dependencies'
+          name: "Install yarn dependencies"
           command: yarn --frozen-lockfile --non-interactive
 
       - run:
-          name: 'Install s3deploy'
+          name: "Install s3deploy"
           command: curl -L https://github.com/bep/s3deploy/releases/download/v2.3.2/s3deploy_2.3.2_Linux-64bit.tar.gz | tar xvz
 
       - save_cache:
@@ -55,10 +54,10 @@ jobs:
       - attach_workspace:
           at: ~/project
       - run:
-          name: 'Run build'
+          name: "Run build"
           command: yarn docs:build
       - run:
-          name: 'Copy resume pdf into dist'
+          name: "Copy resume pdf into dist"
           command: cp Ethan_Anderson_Resume.pdf docs/.vuepress/dist/
       - persist_to_workspace:
           root: ~/project
@@ -75,7 +74,7 @@ jobs:
       - attach_workspace:
           at: ~/project
       - run:
-          name: 'Deploy to S3'
+          name: "Deploy to S3"
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
               cd ~/project/docs/.vuepress/dist
@@ -105,5 +104,5 @@ workflows:
   build:
     jobs:
       - install-dependencies
-      - build: { requires: [install-dependencies] }
-      - deploy: { requires: [build] }
+      - build: {requires: [install-dependencies]}
+      - deploy: {requires: [build]}
