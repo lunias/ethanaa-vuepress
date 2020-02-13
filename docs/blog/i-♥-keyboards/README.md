@@ -94,7 +94,7 @@ a keyboard with this unique layout with me whenever I have real work to do.
 
 ![HHKB Pro 2 Layout](./img/hhkb_layout.png)
 
-*This** is my favorite layout. The HHKB layout; most similar to the [Sun Type
+*This* is my favorite layout. The HHKB layout; most similar to the [Sun Type
 3](https://deskthority.net/wiki/Sun_Type_3) keyboard.
 
 :::quote Common features
@@ -110,7 +110,7 @@ a keyboard with this unique layout with me whenever I have real work to do.
   Fn+`
 - The meta keys are located between the space bar and the alt keys.
 :::right
-From [Wikipedia: Happy Hacking Keyboard](https://en.wikipedia.org/wiki/Happy_Hacking_Keyboard
+From [Wikipedia: Happy Hacking Keyboard](https://en.wikipedia.org/wiki/Happy_Hacking_Keyboard)
 :::
 
 If you haven't used a 60% layout before and can live without dedicated arrow
@@ -136,7 +136,7 @@ issue with Topre switches is the availablity of key caps. As most key caps are
 Cherry MX compatible you're limited in your styling potential.
 
 <div id="audio" class="player-wrapper">
-	<audio-player file="https://upload.wikimedia.org/wikipedia/commons/d/d6/Louis-Emmanuel_Jadin_-_Nocturne_No._3_in_G_minor_-_2._Allegro_molto.ogg"></audio-player>
+	<audio-player file="/snd/topre.mp3"></audio-player>
 </div>
 
 #### Key Caps
@@ -187,8 +187,11 @@ Browns](https://deskthority.net/wiki/Cherry_MX_Brown). Tactile with a good
 weight. Slightly heavier, but that's my preference.
 
 <div id="audio" class="player-wrapper">
-	<audio-player file="https://upload.wikimedia.org/wikipedia/commons/d/d6/Louis-Emmanuel_Jadin_-_Nocturne_No._3_in_G_minor_-_2._Allegro_molto.ogg"></audio-player>
+	<audio-player file="/snd/zealios_65.mp3"></audio-player>
 </div>
+
+*Sounds pretty bad to my ear with the stock GMK key caps. It sounds much better
+with high profile caps*
 
 #### Key Caps
 
@@ -234,7 +237,7 @@ the closest analogue at the time of writing. They're pretty loud, but by far the
 most tactile switches that I own. 60g feels heavy on these. In a nice way.
 
 <div id="audio" class="player-wrapper">
-	<audio-player file="https://upload.wikimedia.org/wikipedia/commons/d/d6/Louis-Emmanuel_Jadin_-_Nocturne_No._3_in_G_minor_-_2._Allegro_molto.ogg"></audio-player>
+	<audio-player file="/snd/box_navy.mp3"></audio-player>
 </div>
 
 #### Key Caps
@@ -263,7 +266,7 @@ but I plan on replacing them with 67g Healios switches.
 
 100g Aliaz:
 <div id="audio" class="player-wrapper">
-	<audio-player file="https://upload.wikimedia.org/wikipedia/commons/d/d6/Louis-Emmanuel_Jadin_-_Nocturne_No._3_in_G_minor_-_2._Allegro_molto.ogg"></audio-player>
+	<audio-player file="/snd/aliaz_100.mp3"></audio-player>
 </div>
 
 67g Healios:
