@@ -4,10 +4,10 @@ title: Switching to Doom Emacs
 date: 2020-02-13 17:00:00
 excerpt: |
   I've been using Emacs for more than decade. I started out with plain-'ol vanilla Emacs 
-  and bunch of customizations that I sourced from the around the web / made myself, 
+  and bunch of customizations that I sourced from around the web / wrote myself, 
   but as time went on I became aware of the nice UX enhancements found in some of 
   the Emacs configuration frameworks, particularly Spacemacs. The trouble with Spacemacs 
-  is that I find it unbearably slow. Today is the day that I switch to Doom Emacs.
+  is that I find it at times to be unbearably slow. Today is the day that I switch to Doom Emacs.
 type: post
 blog: true
 tags:
@@ -30,7 +30,7 @@ config of my own.
 
 ## [Spacemacs](https://www.spacemacs.org/)
 
-![Spacemacs Screenshot](https://www.spacemacs.org/img/screenshots/ss1.png)
+![Spacemacs Screenshot](./img/spacemacs.png)
 
 :::quote What is Spacemacs?
 Spacemacs is a new way to experience Emacs -- a sophisticated and polished
@@ -200,8 +200,8 @@ Commands:
 
 ### Splitting Windows
 
-I use this *a lot*. I wish every program supported splitting the window like
-Emacs (If anyone knows a web browser that supports this I'd like to know).
+I use this *a lot*. I wish every application supported splitting the window like
+Emacs (If anyone knows a web browser that supports this I'd like to know - I do know about and use [TWMs](https://en.wikipedia.org/wiki/Tiling_window_manager) when I can).
 
 `C-x 2` [`split-window-below`] - Splits the window horizontally.
 
