@@ -123,7 +123,68 @@ git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 ```
 
-### Configure Doom
+## [Installing on Windows 10](https://github.com/hlissner/doom-emacs/blob/develop/docs/getting_started.org#on-windows)
+
+### Activate WSL and Install Ubuntu 18.04 LTS
+
+1. In Powershell as admin (Windows key + x) run:
+``` powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+2. Restart
+3. Download and install Ubuntu 18.04 LTS from the Microsoft Store.
+4. Launch Ubuntu 18.04 LTS
+5. Update and upgrade Ubuntu
+``` sh
+sudo apt update && sudo apt upgrade
+```
+
+### Install Doom Emacs
+
+1. Install Emacs 26
+``` sh
+sudo add-apt-repository ppa:kelleyk/emacs
+sudo apt update
+sudo apt install emacs26
+```
+2. Install Doom Emacs
+``` sh
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+```
+3. [Configure Doom](/blog/switching-to-doom-emacs/#configuring-doom)
+``` sh
+~/.emacs.d/bin/doom refresh
+~/.emacs.d/bin/doom sync
+```
+4. Run Doom Doctor
+``` sh
+~/.emacs.d/bin/doom doctor
+```
+
+### Install a Windows X Server
+
+- [Xming X Server for Windows](https://sourceforge.net/projects/xming/)
+- [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/)
+
+### Create an Alias to Launch Emacs
+
+``` sh
+alias emax='
+export DISPLAY=:0.0
+export LIBGL_ALWAYS_INDIRECT=1
+setxkbmap -layout us
+setsid emacs
+exit
+'
+```
+
+In order to run Emacs: open Ubuntu 18.04 LTS in Windows and run `emax` in the
+terminal. The terminal will exit and Doom should launch in an X window.
+
+The local Windows filesystem is available under `/mnt`.
+
+## Configuring Doom
 
 Inside `~/.doom.d/`:
 

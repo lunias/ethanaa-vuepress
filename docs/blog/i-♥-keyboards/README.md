@@ -4,7 +4,7 @@ title: I ♥ Keyboards
 date: 2020-02-11 10:00:00
 excerpt: |
   Like a plumber's wrench or a carptenter's hammer and saw, a keyboard is indispensible to the programmer. 
-  As mechanical keyboards have have gone more mainstream; there's been an explosion of key switches, cases, 
+  As mechanical keyboards have gone more mainstream; there's been an explosion of key switches, cases, 
   and PCBs to accomodate any preference. The question is: how many more will I buy before I'm satisfied? 
   Maybe I'll start framing them.
 type: post
