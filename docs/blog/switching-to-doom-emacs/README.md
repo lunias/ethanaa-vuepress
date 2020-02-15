@@ -132,7 +132,7 @@ git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
 2. Restart
-3. Download and install Ubuntu 18.04 LTS from the Microsoft Store.
+3. Download and install Ubuntu 18.04 LTS from the Microsoft Store
 4. Launch Ubuntu 18.04 LTS
 5. Update and upgrade Ubuntu
 ``` sh
@@ -183,6 +183,8 @@ In order to run Emacs: open Ubuntu 18.04 LTS in Windows and run `emax` in the
 terminal. The terminal will exit and Doom should launch in an X window.
 
 The local Windows filesystem is available under `/mnt`.
+
+Run with the usual `emacs -nw` for no X window.
 
 ## Configuring Doom
 
@@ -256,6 +258,18 @@ Commands:
   Utilities:       Conveniences for interacting with Doom externally
     run              Run Doom Emacs from bin/doom's parent directory.
 ```
+
+### [Themes](https://github.com/hlissner/emacs-doom-themes)
+
+:::quote doom-themes
+DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
+emacs.d, inspired by some of my favorite color themes.
+:::right
+From [github.com/hlissner/emacs-doom-themes](https://github.com/hlissner/emacs-doom-themes)
+:::
+
+#### Doom Laserwave
+![Doom Laserwave](./img/doom-laserwave.png)
 
 ## Workflows
 
