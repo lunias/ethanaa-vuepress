@@ -1,0 +1,31 @@
+.badge-error {
+  background-color: #b94a48;
+}
+
+.badge-success {
+  background-color: #468847;
+}
+
+.list-group {
+    margin-bottom: 0;
+}
+
+div.panel {
+    opacity: 0;
+}
+
+div.panel.fade {
+    -webkit-animation: fade .5s;
+    animation: fade .5s;
+    opacity: 1;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+}

@@ -30,7 +30,7 @@ have written unit tests, but this approach presented a unique challenge of
 developing an ultra-light framework for producing visually pleasing results - and
 I'm able to easily share it here within the context of a static site.
 
-See a [Live Demo here](/js-codingbat)
+See a [Live Demo here](/js-codingbat-static)
 
 I think it's a great idea to do something like this whenever you set out to
 learn a new language. CodingBat provides some basic and challenging exercises
