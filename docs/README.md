@@ -112,7 +112,14 @@ IntelliJ IDEA, Emacs, Maven, Gradle, Git, Tomcat, Jenkins, Node.js, ActiveMQ, Ra
 
 ### Methodologies
 
-Web Services, Microservices, Single Page Applications, Enterprise Integration, Test Driven Development, Continuous Integration, Agile, Pair Programming
+Web Services, Microservices, Single Page Applications, Enterprise Integration,
+Test Driven Development, Continuous Integration, Agile, Pair Programming
+
+### AWS
+
+CloudFormation, CloudFront, CloudWatch, EC2, Elastic Beanstalk, Elastic
+Container Service, IAM, Key Management System, Lambda, RDS, Route 53, S3, Simple
+Email Service, Simple Queue Service, VPC
 
 ## Professional Experience
 
@@ -120,6 +127,13 @@ Web Services, Microservices, Single Page Applications, Enterprise Integration, T
 #### Vivial
 
 April 2019 - Present
+
+- Migrated and maintained a legacy Python Django application running on EC2 to
+  Convox; involving RabbitMQ, MongoDB, and PostgreSQL
+- Designed and implemented a nightly, continuous ETL task in Node.js with Convox
+  for exporting data from MongoDB to RDS (PostgreSQL)
+- Created a pixel tracking service and scripted migration of legacy data to the
+  new system
 
 ### Consultant
 #### Solution Design Group 

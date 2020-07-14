@@ -9,7 +9,6 @@ excerpt: |
   Maybe I'll start framing them.
 type: post
 blog: true
-publish: false
 tags:
     - Keyboard
     - Tokyo60
