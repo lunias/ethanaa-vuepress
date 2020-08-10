@@ -29,8 +29,8 @@ noGlobalSocialShare: true
 
 # About Me
 
-My name is Ethan Anderson; I am 31 years old and I currently live in Minnesota,
-just northwest of Minneapolis.
+My name is Ethan Anderson; I currently live in Minnesota, just northwest of
+Minneapolis.
 
 I enjoy creating software that is meaningful, accessible, and focused. The
 majority of my experience has lent itself to building server-side applications
