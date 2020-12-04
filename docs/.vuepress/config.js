@@ -25,7 +25,7 @@ module.exports = {
   ],
   themeConfig: {
     lastUpdated: "Last Updated",
-    logo: "/eanderson.jpg",
+    logo: "/eanderson.png",
     displayAllHeaders: true,
     nav: [
       { text: "About", link: "/#about-me" },

@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /eanderson.jpg
+heroImage: /eanderson2.png
 heroText: Ethan Anderson
 tagline: Software Engineer
 actionText: View Résumé →
@@ -217,4 +217,4 @@ September 2008 - December 2008
 - [stackoverflow.com/users/2620313/ethan-anderson](https://stackoverflow.com/users/2620313/ethan-anderson)
 <br/>
 <a href="https://stackoverflow.com/users/2620313/ethan-anderson">
-<img src="https://stackoverflow.com/users/flair/2620313.png?theme=clean" width="208" height="58" alt="profile for Ethan Anderson at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Ethan Anderson at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
+<img src="https://stackoverflow.com/users/flair/2620313.png" width="208" height="58" alt="profile for Ethan Anderson at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Ethan Anderson at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
