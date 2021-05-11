@@ -123,11 +123,15 @@ Email Service, Simple Queue Service, VPC
 
 ## Professional Experience
 
+### Software Engineer, Sr.
+#### Boston Scientific
+March 2021 - Present
+- Migrated off of a custom authorization server to spring-authorization-server
+- Worked on the development of the Hawkeye digital product
+
 ### Software Engineer
 #### Vivial
-
-April 2019 - Present
-
+April 2019 - March 2021
 - Migrated and maintained a legacy Python Django application running on EC2 to
   Convox; involving RabbitMQ, MongoDB, and PostgreSQL
 - Designed and implemented a nightly, continuous ETL task in Node.js with Convox
